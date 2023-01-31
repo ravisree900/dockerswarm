@@ -114,3 +114,67 @@ git push -u origin master
 git remote add origin https://github.com/ravisree900/dockerswarm.git
 git push -u origin master
 exit
+git add .
+git commit -m "a"
+git push
+git push git remote add origin https://github.com/ravisree900/dockerswarm.git
+git remote add origin https://github.com/ravisree900/dockerswarm.git
+git push -u origin master
+git remote add origin https://github.com/ravisree900/dockerswarm.git
+git push -u origin master
+exit
+docker node ls
+docker service ls
+docker sevice rm weserver
+docker sevice rm webserver
+docker service rm webserver
+clear
+docker network ls
+docker network create --driver overlay ravi1
+docker network create --driver overlay ravi2
+docker network ls
+docker service create --name webserver -P --replicas 4 --network ravi1 httpd
+docker service create --name webserver -p 8888:80 --replicas 4 --network ravi1 httpd
+docker service create --help
+clear
+docker sevice ls
+docker service ls
+docker service ps webserver
+docker service inspect webserver
+docker service inspect webserver --pretty
+docker network ls
+ls
+cd get-docker.sh
+cat get-docker.sh
+clear
+docker service create --name appserver -p 9090:8080 --replicas 3 tomacat
+docker service ls
+docker service rm appsever
+docker service rm appserver
+docker service ls
+docker service create --name appserver -p 9090:8080 --replicas 3 tomcat
+docker service ls
+docker service ps appserver --pretty
+docker service inspect appserver --pretty
+docker service ps appserver
+docker service update --network-add ravi2 appserver
+docker service ps appserver
+docker network ls
+docker service ps appserver --pretty
+docker service inspect appserver --pretty
+docker service ls
+docker service rm appserver webserver
+docker service ls
+docker network ls
+docker node ls
+docker service create --name webserver -p 9999:80 --replicas 2 nginx
+docker service ls
+docker service ps webserver
+docker service rm webserver
+docker service ls
+docker node ls
+docker network ls
+docker networrk rm ravi1 ravi2
+docker network rm ravi1 ravi2
+docker network ls
+exit
